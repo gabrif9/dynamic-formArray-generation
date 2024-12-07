@@ -1,0 +1,25 @@
+<div class="w-full flex justify-center">
+  <div class="mt-10">
+    <form [formGroup]="dynamicFormGroup" action="">
+      @for (item of getFormArray().controls; track $index; let last = $last; let first = $first) {
+        <div class="flex">
+          <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs mb-5" />
+          @if (last) {
+            <button (click)="addInputForm()" class="btn btn-info btn-square ms-2">
+              <span class="material-symbols-outlined">
+                add
+                </span>
+            </button>
+          }
+          @if (!first) {
+            <button (click)="removeInputForm($index)" class="btn btn-error btn-square ms-2">
+              <span class="material-symbols-outlined">
+                remove
+                </span>
+            </button>
+          }
+        </div>
+      }
+    </form>
+  </div>
+</div>

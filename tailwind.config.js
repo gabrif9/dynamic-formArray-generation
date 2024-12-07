@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    themes: ["dark"],
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
 
